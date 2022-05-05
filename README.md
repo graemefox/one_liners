@@ -1,7 +1,6 @@
 # Various bioinformatics one liners
 
-### 1) Read a comma delimited file on SNPs giving contig IDs, SNP positions etc and pull out surrounding +/- 250bp from the original contig
-Write out to .fasta file
+### 1) Read a comma delimited file on SNPs giving contig IDs, SNP positions etc, pull out surrounding +/- 250bp from the original contig, & write out to .fasta file
 Change values as appropriate
 Column 1 contains contig ID ($1)
 Column 2 contains the SNP position ($2)
