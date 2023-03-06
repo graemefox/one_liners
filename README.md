@@ -10,7 +10,7 @@ awk -F ',' 'NR>1 {print $1, $2}' file_of_SNPs_to_extract.csv | while read var1 v
 ```
 
 
-### 3) generate md5 for whole dir 
+### 2) generate md5 for whole dir 
 ```
 find <input_dir> -type f -exec md5sum {} + | awk '{print $1}' | sort | md5sum
 ```
