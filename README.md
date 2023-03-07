@@ -15,3 +15,7 @@ awk -F ',' 'NR>1 {print $1, $2}' file_of_SNPs_to_extract.csv | while read var1 v
 find <input_dir> -type f -exec md5sum {} + | awk '{print $1}' | sort | md5sum
 ```
 
+### 3) calculate binary md5 and convert to base64 (Azure blobs use base64)
+```
+md5sum --binary <input_file> | awk '{print $1}' | xxd -p -r | base64
+```
