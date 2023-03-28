@@ -19,3 +19,10 @@ find <input_dir> -type f -exec md5sum {} + | awk '{print $1}' | sort | md5sum
 ```
 md5sum --binary <input_file> | awk '{print $1}' | xxd -p -r | base64
 ```
+
+### 4) Merge multiple .fq.gz with the same file name stem. I.e. get L001 - L004 for a single sample.
+```
+# pass file_list.txt of the file name stems (the common bit)
+while read file ; do out=_merged_R1.fq.gz ; echo $file ; zcat $file* | gzip > $file$out ; done < file_list.txt
+```
+
