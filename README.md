@@ -26,3 +26,8 @@ md5sum --binary <input_file> | awk '{print $1}' | xxd -p -r | base64
 while read file ; do out=_merged_R1.fq.gz ; echo $file ; zcat $file* | gzip > $file$out ; done < file_list.txt
 ```
 
+### 5) Attach to a running slurm job
+```
+srun --pty --jobid $JOBID /bin/bash
+```
+
